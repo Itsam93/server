@@ -1,8 +1,8 @@
 import { randomUUID } from "crypto";
 
-import { findByShortCode, links } from "../storage/links";
-import { generateCode } from "../utils/generateCode";
-import { isExpired } from "../utils/isExpired";
+import { findByShortCode, links } from "../storage/links.js";
+import { generateCode } from "../utils/generateCode.js";
+import { isExpired } from "../utils/isExpired.js";
 
 const EXPIRATION_DAYS = 7;
 
