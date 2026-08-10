@@ -1,15 +1,15 @@
 import express from "express";
 import cors from "cors";
 
-import routes from "./routes";
+import routes from "./routes/index.js";
 
 import {
   errorMiddleware,
-} from "./middleware/errorMiddleware";
+} from "./middleware/errorMiddleware.js";
 
 import {
   notFoundMiddleware,
-} from "./middleware/notFoundMiddleware";
+} from "./middleware/notFoundMiddleware.js";
 
 const app = express();
 
@@ -17,7 +17,11 @@ app.use(cors());
 
 app.use(express.json());
 
-app.use(express.urlencoded({ extended: true }));
+app.use(
+  express.urlencoded({
+    extended: true,
+  })
+);
 
 app.use(routes);
 

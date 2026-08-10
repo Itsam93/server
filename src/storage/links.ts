@@ -1,4 +1,4 @@
-import type { Link } from "../types/link";
+import type { Link } from "../types/link.js";
 
 export const links = new Map<string, Link>();
 

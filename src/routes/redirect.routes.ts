@@ -1,14 +1,19 @@
 import { Router } from "express";
 
-import { linksService } from "../services/links.service";
+import { linksService } from "../services/links.service.js";
 
 const router = Router();
 
 router.get("/:shortCode", (req, res) => {
-  const link = linksService.findByCode(req.params.shortCode);
+  const { shortCode } = req.params;
+
+  const link = linksService.findByCode(shortCode);
 
   if (!link) {
-    return res.status(404).send("Link not found or has expired.");
+    return res.status(404).json({
+      success: false,
+      message: "Short link not found or expired.",
+    });
   }
 
   return res.redirect(link.originalUrl);

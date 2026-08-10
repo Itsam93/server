@@ -1,7 +1,7 @@
 import type { Request, Response } from "express";
 
-import { linksService } from "../services/links.service";
-import { buildShortUrl } from "../utils/buildShortUrl";
+import { linksService } from "../services/links.service.js";
+import { buildShortUrl } from "../utils/buildShortUrl.js";
 
 class LinksController {
   create(req: Request, res: Response) {
